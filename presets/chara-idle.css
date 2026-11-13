@@ -1,0 +1,13 @@
+.pf-chara-idle {
+  --pf-delay: 0ms;
+  transform-origin: 50% 100%;
+}
+.pf-chara-idle--walk  { --pf-dur: 600ms;  --pf-amp: 4px; }
+.pf-chara-idle--sway  { --pf-dur: 3600ms; --pf-angle: 6deg; }
+.pf-chara-idle--walk.is-on  { animation: pf-chara-idle-walk var(--pf-dur) steps(2, jump-none) var(--pf-delay) infinite alternate; }
+.pf-chara-idle--sway.is-on { animation: pf-chara-idle-sway var(--pf-dur) ease-in-out var(--pf-delay) infinite alternate; }
+@keyframes pf-chara-idle-walk  { from { translate: 0 0; } to { translate: 0 calc(var(--pf-amp) * -1); } }
+@keyframes pf-chara-idle-sway  { from { rotate: calc(var(--pf-angle) * -1); } to { rotate: var(--pf-angle); } }
+@media (prefers-reduced-motion: reduce) {
+  .pf-chara-idle, .pf-chara-idle.is-on { animation: none; translate: none; rotate: none; }
+}

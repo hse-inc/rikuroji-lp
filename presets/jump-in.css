@@ -1,0 +1,18 @@
+.pf-jump-in {
+  --pf-dur: 700ms;
+  --pf-delay: 0ms;
+  --pf-rise: 60%;
+  --pf-from: 0.6;
+  --pf-ease: cubic-bezier(0.34, 1.56, 0.64, 1);
+  translate: 0 var(--pf-rise);
+  scale: var(--pf-from);
+  opacity: 0;
+}
+.pf-jump-in.is-on { animation: pf-jump-in var(--pf-dur) var(--pf-ease) var(--pf-delay) both; }
+@keyframes pf-jump-in {
+  from { translate: 0 var(--pf-rise); scale: var(--pf-from); opacity: 0; }
+  to   { translate: 0 0; scale: 1; opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pf-jump-in, .pf-jump-in.is-on { translate: 0 0; scale: 1; opacity: 1; animation: none; }
+}

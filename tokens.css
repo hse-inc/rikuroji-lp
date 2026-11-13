@@ -1,0 +1,74 @@
+:root {
+  
+  --color-ink: #3b302a;          
+  --color-main: #E3703F;         
+  --color-main-2: #3f8f78;       
+  --color-accent: #E3703F;       
+  --color-accent-2: #E3703F;     
+  --color-base: #F8EBE0;         
+  --color-pale: #fffaf5;         
+  --color-line: #d9c6b6;         
+  --color-head: #CC0000;         
+  --color-mint: #7BC6B0;         
+  --color-mint-pale: #e4f3ee;    
+  --color-orange-pale: #fbe6da;  
+  --color-night: #4b5470;        
+  --color-star: #f2c94c;         
+  --color-mark: rgb(123 198 176 / 0.45);   
+  --color-on-dark: #ffffff;      
+  --color-on-dark-line: rgb(255 255 255 / 0.6);
+  --color-error: #c8312b;        
+  --color-shadow: rgb(59 48 42 / 0.12);
+
+  
+  --bg-dark: linear-gradient(160deg, var(--color-main) 0%, var(--color-ink) 100%);
+  --bg-accent: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-2) 100%);
+
+  
+  --font-body: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", system-ui, sans-serif;
+  --font-head: "Zen Maru Gothic", "Noto Sans JP", "Hiragino Sans", sans-serif;   
+  --font-en: "Outfit", "Noto Sans JP", sans-serif;
+  
+  --fs-min: 13px;
+  
+  --fs-base: clamp(var(--fs-min), min(2.26dvh, 3.85vw), 15px);
+  --fs-ui: max(var(--fs-min), 13px);   
+  --fs-input: 16px;                     
+  --fw-body: 500;                   
+  --ls-body: 0.03em;
+  --lh-body: 1.85;
+  --lh-head: 1.4;
+
+  
+  --col: 480px;                  
+  --header-h: 56px;
+  --gutter: 22px;                
+  
+  --sp-1: 0.45em;                
+  --sp-p: calc(var(--sp-1) * 2); 
+  --sp-h: calc(var(--sp-1) * 3); 
+  --sp-g: calc(var(--sp-1) * 5); 
+  --sp-s: calc(var(--sp-1) * 8); 
+  --pad-y: 1.2em;                
+  
+  --box-py: var(--sp-1);                       
+  --box-px: max(16px, var(--sp-p));            
+  --box-py-l: var(--sp-p);                     
+  --box-px-l: max(16px, var(--sp-h));          
+  --gap-icon: clamp(16px, 1.3em, 24px);        
+  
+  --next-h: 0px;                 
+  --radius-pill: 999px;
+  --radius-s: 6px;
+  --radius-card: 14px;           
+  --shadow-soft: 0 0 10px 0 var(--color-shadow);
+  --shadow-column: 0 0 24px 0 var(--color-shadow);
+
+  
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --rise: 32px;                  
+  --dur-in: 600ms;
+  --dur-hover: 300ms;
+}
+
+@media (max-height: 600px) { :root { --pad-y: 0.7em; --sp-1: 0.36em; } }   

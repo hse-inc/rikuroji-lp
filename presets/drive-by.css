@@ -1,0 +1,26 @@
+.pf-drive-by {
+  position: relative;
+  overflow: hidden;
+}
+.pf-drive-by .pf-v {
+  --pf-x0: -30%;
+  --pf-x1: 110%;
+  --pf-b: 8%;
+  --pf-w: 28%;
+  --pf-t: 8s;
+  --pf-d: 0s;
+  position: absolute;
+  left: var(--pf-x0);
+  bottom: var(--pf-b);
+  width: var(--pf-w);
+  pointer-events: none;
+}
+.pf-drive-by .pf-v > * { display: block; width: 100%; height: auto; }
+.pf-drive-by.is-on .pf-v { animation: pf-drive-by var(--pf-t) linear var(--pf-d) infinite; }
+.pf-drive-by.is-on .pf-v > * { animation: pf-drive-by-rumble 0.22s steps(2) infinite; }
+@keyframes pf-drive-by { from { left: var(--pf-x0); } to { left: var(--pf-x1); } }
+@keyframes pf-drive-by-rumble { 50% { translate: 0 -2%; } }
+@media (prefers-reduced-motion: reduce) {
+  .pf-drive-by.is-on .pf-v, .pf-drive-by.is-on .pf-v > * { animation: none; }
+  .pf-drive-by .pf-v { left: 35%; }
+}

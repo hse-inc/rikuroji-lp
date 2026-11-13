@@ -1,0 +1,18 @@
+.pf-char-in {
+  --pf-dur: 850ms;
+  --pf-step: 30ms;
+  --pf-delay: 100ms;
+  --pf-dist: 0.9em;
+  --pf-ease: cubic-bezier(0.08, 0.82, 0.17, 1);
+}
+.pf-char-in .pf-c { position: relative; opacity: 0; }   
+.pf-char-in.is-on .pf-c {
+  opacity: 1;
+  animation: pf-char-in-rise var(--pf-dur) var(--pf-ease) calc(var(--pf-delay) + var(--i, 0) * var(--pf-step)) both;
+}
+
+@keyframes pf-char-in-rise   { from { top: var(--pf-dist); opacity: 0; } 30% { opacity: 1; } to { top: 0; opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-char-in .pf-c, .pf-char-in.is-on .pf-c { opacity: 1; animation: none; top: 0; left: 0; transform: none; filter: none; }
+}
