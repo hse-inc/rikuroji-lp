@@ -31,11 +31,11 @@
 .card__tab { font-weight: 600; font-size: var(--fs-ui); letter-spacing: 0.16em; color: var(--color-main-2); line-height: 1; }
 
 .trio { flex: 1 1 auto; min-height: 0; display: grid; grid-template-rows: repeat(3, minmax(0, 1fr)); gap: var(--sp-1); }   
-.trio__item { display: grid; grid-template-columns: 44% 1fr; align-items: center; min-height: 0; gap: var(--sp-p); }
-.trio__img { width: 100%; height: 100%; min-height: 9dvh; object-fit: contain; contain: size; aspect-ratio: auto; }   
+.trio__item { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; min-height: 0; gap: var(--sp-p); }
+.trio__img { height: 100%; width: auto; aspect-ratio: 1; min-height: 9dvh; max-width: 36vw; object-fit: contain; contain: size; }      
 .trio__item:nth-child(2) .trio__img { --pf-delay: 200ms; }
 .trio__item:nth-child(3) .trio__img { --pf-delay: 400ms; }
-.trio__txt { font-weight: 700; font-size: 1.05em; line-height: var(--lh-head); }
+.trio__txt { align-self: center; padding: var(--box-py-l) var(--box-px); font-weight: 700; font-size: 1.06em; line-height: var(--lh-head); background: var(--color-pale); border-radius: var(--radius-card); }   
 
 .time { flex: 1 1 auto; min-height: 0; display: grid; grid-template-rows: auto minmax(0, 1fr); gap: var(--sp-p); }   
 .swap { position: relative; min-height: 18dvh; }
@@ -70,8 +70,14 @@
   .work__img { grid-row: 1; grid-column: 2; min-height: 18dvh; }
 }
 
-.road { align-self: stretch; width: 100%; flex: 1 1 auto; min-height: min(17dvh, 140px); }
+.road { position: relative; overflow: hidden; align-self: stretch; width: 100%; flex: 1 1 auto; min-height: min(17dvh, 140px); }
 .road__stand { position: absolute; right: 0; bottom: 0; height: 100%; width: auto; }
+.road__v { position: absolute; left: 0; bottom: 0; height: 100%; width: auto; max-width: 62%; object-fit: contain; }
+.road--car .road__v { right: 0; margin-inline: auto; max-width: 100%; }
+.road.is-on .drive-in { animation: drive-in 1.3s var(--ease-out) both, rumble 0.24s steps(2) 1.3s 5; }   
+@keyframes drive-in { from { translate: -120% 0; } to { translate: 0 0; } }
+@keyframes rumble { 50% { translate: 0 -2%; } }
+@media (prefers-reduced-motion: reduce) { .road.is-on .drive-in { animation: none; } }
 
 .num {
   position: relative; display: flex; flex-direction: column; align-items: flex-start; flex: 1 1 auto; min-height: 0; gap: var(--sp-p);
@@ -79,7 +85,11 @@
   background: var(--color-pale); border-radius: var(--radius-card);
 }
 .num__no { font-family: var(--font-en); font-weight: 600; font-size: var(--fs-ui); color: var(--color-main-2); line-height: 1; }
-.num__img { align-self: stretch; flex: 1 1 0; min-height: 16dvh; width: 100%; object-fit: contain; contain: size; aspect-ratio: auto; }
+.num__fig { position: relative; align-self: stretch; flex: 1 1 0; min-height: 16dvh; display: flex; justify-content: center; }   
+.num__img { height: 100%; width: 100%; object-fit: contain; contain: size; aspect-ratio: auto; }
+.num__side { position: absolute; height: auto; }
+.num__side--l { left: 4%; bottom: 6%; width: 22%; --pf-delay: -1.2s; }
+.num__side--r { right: 6%; top: 8%; width: 14%; --pf-delay: -2.4s; }
 .chips { display: flex; flex-wrap: wrap; gap: var(--sp-1); }
 .chip { padding: var(--box-py) var(--box-px); font-weight: 700; font-size: 0.92em; line-height: 1; background: var(--color-orange-pale); border-radius: var(--radius-pill); }
 
@@ -215,6 +225,6 @@
 
 .card .ttl, .num .ttl { margin-bottom: calc(var(--sp-h) - var(--sp-p)); }           
 .card__tab + .ttl, .num__no + .ttl { margin-top: calc(var(--sp-1) - var(--sp-p)); }   
-.card > :is(.trio, .work, .road), .num > :is(.num__img, .road, .chat) { margin-block: calc(var(--sp-g) - var(--sp-p)); }   
+.card > :is(.trio, .work, .road), .num > :is(.num__fig, .road, .chat) { margin-block: calc(var(--sp-g) - var(--sp-p)); }   
 
 #p4 .ttl { font-size: 1.4em; }
