@@ -72,3 +72,15 @@
     walk(el);
   });
 })();
+
+/* sp-37：見出しの波線を文字の幅に合わせる（2行の見出しは長いほうの行の幅。りょうさん 11/13） */
+(() => {
+  const fit = () => document.querySelectorAll('.ttl').forEach((el) => {
+    el.style.removeProperty('--ttl-w');
+    const r = document.createRange(); r.selectNodeContents(el);
+    const rects = [...r.getClientRects()]; if (!rects.length) return;
+    const left = Math.min(...rects.map((x) => x.left)), right = Math.max(...rects.map((x) => x.right));
+    el.style.setProperty('--ttl-w', `${Math.ceil(right - left)}px`);
+  });
+  addEventListener('load', fit); addEventListener('resize', fit); document.fonts && document.fonts.ready.then(fit);
+})();
