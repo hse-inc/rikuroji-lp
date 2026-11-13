@@ -123,7 +123,7 @@
 @keyframes koma { 0% { opacity: 1; } 50% { opacity: 0; } }
 
 #p9 .ttl { padding: var(--box-py) var(--box-px-l); background: var(--color-pale); border-radius: var(--radius-pill); font-size: 1.35em; }
-#p9 .list, #p9 .page__inner > .body { color: var(--color-on-mint); text-shadow: 0 1px 2px var(--color-on-mint-shadow); }   
+#p9 .list, #p9 .page__inner > .body { color: var(--color-on-mint); font-weight: 700; text-shadow: 0 1px 2px var(--color-on-mint-shadow), 0 0 6px var(--color-on-mint-shadow); }   
 #p9 .say { text-shadow: none; }
 
 .pr { position: absolute; height: auto; pointer-events: none; }
