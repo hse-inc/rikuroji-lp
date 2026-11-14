@@ -259,10 +259,8 @@
 @media (max-height: 700px) {   
   .fv__scene { width: min(72%, 36dvh); }   
   .trio__img { min-height: 0; }
-  .trio__no, .trio__item:nth-child(even) .trio__no { align-self: auto; font-size: 1.15em; }
-  .trio__say, .trio__item:nth-child(even) .trio__say { flex-direction: row; align-items: center; margin-inline: 0; }   
-  .trio__say .trio__txt { flex: 1 1 auto; }
-  .trio__item:nth-child(odd) .trio__say { flex-direction: row-reverse; }   
+  .trio__no { font-size: 1.15em; }   
+  .trio__say { gap: 0.1em; }   
   .card { --tab-h: 1.45em; }   
   #p2 { --sp-1: 0.2em; }   
   .co-scene { min-height: 10dvh; }
