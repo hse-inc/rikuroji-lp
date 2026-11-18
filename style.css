@@ -30,7 +30,7 @@
 .trio__item:nth-child(even) { grid-template-columns: minmax(0, 1fr) 46%; }
 .trio__item:nth-child(even) .trio__img { grid-column: 2; grid-row: 1; }
 .trio__item:nth-child(even) .trio__say { grid-column: 1; grid-row: 1; }
-.trio__img { width: 100%; height: 100%; min-height: 5dvh; object-fit: contain; contain: size; aspect-ratio: auto; }   
+.trio__img { align-self: center; width: 100%; height: 100%; min-height: 5dvh; max-height: 13dvh; object-fit: contain; contain: size; aspect-ratio: auto; }      
 .trio__item:nth-child(2) .trio__img { --pf-delay: 200ms; }
 .trio__item:nth-child(3) .trio__img { --pf-delay: 400ms; }
 .trio__txt {
@@ -78,12 +78,12 @@
 .list.chk.work__list li { display: flex; align-items: center; justify-content: center; gap: var(--sp-1); padding: var(--box-py) var(--sp-p); text-align: center; white-space: nowrap; background: var(--color-pale); border-radius: var(--radius-card); line-height: var(--lh-head); }
 .list.chk.work__list li::before { position: static; flex: none; }      
 .work__list .hl { background: linear-gradient(transparent 58%, var(--color-mark) 58%); }   
-.work__img { width: 100%; height: 100%; min-height: 5dvh; object-fit: contain; object-position: center; contain: size; aspect-ratio: auto; }
+.work__img { align-self: center; width: 100%; height: 100%; min-height: 5dvh; max-height: 20dvh; object-fit: contain; object-position: center; contain: size; aspect-ratio: auto; }   
 
 .road { position: relative; overflow: hidden; align-self: stretch; width: auto; margin-inline: calc(var(--box-px-l) * -1);  flex: 1 1 auto; min-height: min(17dvh, 140px); }
-.road__stand { position: absolute; right: 0; bottom: 0; height: 100%; width: auto; }
-.road__v { position: absolute; left: 0; bottom: 0; height: 100%; width: auto; max-width: 62%; object-fit: contain; }
-.road--car .road__v { right: 0; top: 0; margin: auto; height: auto; max-height: 100%; max-width: 90%; }   
+.road__stand { position: absolute; right: 2%; top: 0; bottom: 0; margin-block: auto; width: 46%; height: auto; max-height: 100%; object-fit: contain; }   
+.road__v { position: absolute; left: 2%; top: 0; bottom: 0; margin-block: auto; width: 46%; height: auto; max-height: 100%; object-fit: contain; }
+.road--car .road__v { left: 0; right: 0; top: 0; margin: auto; width: auto; height: auto; max-height: 100%; max-width: 90%; }   
 .road.is-on .drive-in { animation: drive-in 1.3s var(--ease-out) both, rumble 0.24s steps(2) 1.3s 5; }   
 @keyframes drive-in { from { translate: -120% 0; } to { translate: 0 0; } }
 @keyframes rumble { 50% { translate: 0 -2%; } }
