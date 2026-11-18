@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#7BC6B0"/>
+  <!-- 倉庫の段ボール箱（太い図形だけ・幅 70%） -->
+  <polygon points="10,22 32,14 54,22 32,30" fill="#fffaf5" stroke="#3b302a" stroke-width="3.5" stroke-linejoin="round"/>
+  <polygon points="10,22 32,30 32,52 10,44" fill="#E3703F" stroke="#3b302a" stroke-width="3.5" stroke-linejoin="round"/>
+  <polygon points="54,22 32,30 32,52 54,44" fill="#E3703F" stroke="#3b302a" stroke-width="3.5" stroke-linejoin="round"/>
+  <polygon points="21,18 43,26 43,34 37,32 37,28 21,22" fill="#fffaf5" stroke="#3b302a" stroke-width="2.5" stroke-linejoin="round"/>
+</svg>
