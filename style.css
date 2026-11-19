@@ -256,6 +256,19 @@
 .co-scene__p--3 { left: 0%; top: 2%; width: 13%; --pf-delay: -2.6s; }
 .co-scene__p--4 { right: 0%; bottom: 0%; width: 14%; --pf-delay: -1s; }
 .doodle--co { left: 10%; bottom: 3%; width: 80%; height: 10%; opacity: 0.45; }
+@media (min-width: 960px) {   
+  .card, .num { flex: 0 1 auto; }
+  .trio { flex: 0 0 auto; grid-template-rows: repeat(3, auto); }
+  .trio__img { height: 10.5dvh; }
+  .time { flex: 0 0 auto; grid-template-rows: auto auto; }
+  .swap { height: 24dvh; }
+  .work { flex: 0 0 auto; grid-template-rows: auto auto; }
+  .work__img { height: 18dvh; }
+  .road { flex: 0 0 auto; height: 17dvh; }
+  .num__fig, .chat { flex: 0 0 auto; height: 22dvh; }
+  .end__img { flex: 0 0 auto; height: 30dvh; }
+  .co-scene { flex: 0 0 auto; height: 16dvh; }
+}
 @media (max-height: 700px) {   
   .fv__scene { width: min(72%, 36dvh); }   
   .trio__img { min-height: 0; }
